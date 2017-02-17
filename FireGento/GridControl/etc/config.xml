@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config>
+    <global>
+        <models>
+            <firegento_gridcontrol>
+                <class>FireGento_GridControl_Model</class>
+            </firegento_gridcontrol>
+        </models>
+
+        <helpers>
+            <firegento_gridcontrol>
+                <class>FireGento_GridControl_Helper</class>
+            </firegento_gridcontrol>
+        </helpers>
+    </global>
+
+    <adminhtml>
+        <events>
+            <adminhtml_block_html_before>
+                <observers>
+                    <firegento_gridcontrol>
+                        <type>singleton</type>
+                        <class>firegento_gridcontrol/observer</class>
+                        <method>adminhtmlBlockHtmlBefore</method>
+                    </firegento_gridcontrol>
+                </observers>
+            </adminhtml_block_html_before>
+
+            <core_collection_abstract_load_before>
+                <observers>
+                    <firegento_gridcontrol>
+                        <type>singleton</type>
+                        <class>firegento_gridcontrol/observer</class>
+                        <method>eavCollectionAbstractLoadBefore</method>
+                    </firegento_gridcontrol>
+                </observers>
+            </core_collection_abstract_load_before>
+            <eav_collection_abstract_load_before>
+                <observers>
+                    <firegento_gridcontrol>
+                        <type>singleton</type>
+                        <class>firegento_gridcontrol/observer</class>
+                        <method>eavCollectionAbstractLoadBefore</method>
+                    </firegento_gridcontrol>
+                </observers>
+            </eav_collection_abstract_load_before>
+        </events>
+    </adminhtml>
+</config>
